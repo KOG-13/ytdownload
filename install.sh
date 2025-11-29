@@ -7,6 +7,6 @@ if [ ! -d $HOME/.local/bin/ ]; then
     }
 fi
 
-cp ./ytdownload $HOME/.local/bin
+cp ./ytdownload.sh $HOME/.local/bin/ytdownload
 echo "ytdownload copied to ~/.local/bin/"
 
