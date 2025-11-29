@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-# Define some colors
+# Define text color
 RED="\e[31m"
 GREEN="\e[32m"
 BLUE="\e[34m"
@@ -9,7 +9,7 @@ CYAN="\e[36m"
 RESET="\e[0m"
 
 read -rp "Enter Youtube URL (Press Q to quit): " url
-if [[ "$url" == "q" || "$url" == "Q" ]]; then # Quit if user enters 'q' or 'Q'
+if [[ "$url" == "q" || "$url" == "Q" ]]; then
   echo -e "\e[1;31mExited program.\e[0m"
   exit 1
 elif [ -z "$url" ]; then # If no input
@@ -20,6 +20,7 @@ fi
 
 
 while true; do
+  # Choose file destination
   echo -e "----------------------------------------"
   echo -e "${GREEN}1) Termux:${RESET} (~/storage/movies/)"
   echo -e "${BLUE}2) Linux:${RESET} (~/Videos/Youtube/)"
@@ -28,7 +29,7 @@ while true; do
 
   case $destination_choise in 
     1)
-      DESTINATION="$HOME/storage/movies"
+      DESTINATION="$HOME/storage/movies" #Termux-friendly file destination
       ;;
     2)
       DESTINATION="$HOME/Videos/Youtube"
@@ -43,6 +44,7 @@ while true; do
       ;;
   esac
       
+  # Check if file destination exists. Ask to create if it doesn't
   if [ ! -d "$DESTINATION" ]; then
     read -rp "Destination does not exist. Create path? [y/n]: " create_path
     if [[ $create_path == "y" ]]; then
@@ -61,7 +63,7 @@ while true; do
 
   echo "Destination set as $DESTINATION"
 
-
+  # Choose file format
   echo -e "----------------------------------------"
   echo -e "${CYAN}1) .mp3${RESET}" 
   echo -e "${BLUE}2) .mp4${RESET}" 
