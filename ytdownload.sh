@@ -83,7 +83,7 @@ while true; do
               echo -e "\e[1;31;1mError: Video failed to audio.\e[0m"
               exit 1
           }
-          echo -e "${CYAN}Audio saved to ~/Videos/Youtube/${RESET}"
+          echo -e "${CYAN}Audio saved to $DESTINATION${RESET}"
           break
           ;;
       2)
@@ -95,7 +95,7 @@ while true; do
               echo -e "\e[1;31;1mError: Video failed to download.\e[0m"
               exit 1
           }
-          echo -e "${BLUE}Video saved to ~/Videos/Youtube/${RESET}"
+          echo -e "${BLUE}Video saved to $DESTINATION${RESET}"
           break
           ;;
       3)
@@ -107,7 +107,7 @@ while true; do
               echo -e "\e[1;31;1mError: Video failed to download.\e[0m"
               exit 1
           }
-          echo -e "${GREEN}Video saved to ~/Videos/Youtube/${RESET}"
+          echo -e "${GREEN}Video saved to $DESTINATION${RESET}"
           break
           ;;
       4)
@@ -118,7 +118,7 @@ while true; do
               echo -e "\e[1;31;1mError: Audio failed to download.\e[0m"
               exit 1
           }
-          echo -e "${PURPLE}Video saved to ~/Videos/Youtube/${RESET}"
+          echo -e "${PURPLE}Video saved to $DESTINATION${RESET}"
           break
           ;;
       5)
